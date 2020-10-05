@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section class="panel-section">
+  <div class="panel">
+    <h1>Welcome to <span class="app-name">CardChecker.pl!</span></h1>
+    <section class="card-container">
+
+      <div class="card">
+        <div class="output">
+          <h2>
+            <span id="flask-output">{{ result[0] }} </span>
+            {% if result[1] > 1 %}
+            <span id="ico" class="neutral"><i class="fas fa-question"></i></span>
+            {% elif result[1] == 1 %}
+            <span id="ico" class="green"><i class="fas fa-check"></i></span>
+            {% elif result[1] == 0 %}
+            <span id="ico" class="red"><i class="fas fa-times"></i></span>
+            {% endif %}
+
+          </h2>
+          <p id="chip"><i class="fas fa-microchip fa-rotate-90"></i><span id="card-no">
+              {% if card_no %}
+              {{ card_no }}
+              {% endif %}
+            </span></p>
+          <p id="card-holder">Cardholder Name</p>
+        </div>
+      </div>
+      <div class="card-dark"></div>
+    </section>
+
+    <div class="input">
+      <form method="POST" action="/check">
+        <input id="card-no-input" class="number" type="number" min="0" step="1" name="card_no"
+          placeholder="Enter Card No" />
+        <p class="btns">
+          <button id="submit" class="btn">Check Your Card</button>
+          <a id="reset" class="btn" href="/check">Reset</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+<section class="info-section">
+  <span id="modalBtn" class="info-btn">
+    <i class="fas fa-question fa-stack-3x"></i>
+  </span>
+  <a id="githubLink" class="info-btn" href="#">
+    <i class="fab fa-github"></i>
+  </a>
+  <a id="projectLink" class="info-btn" href="#">
+    <i class="fab fa-figma"></i>
+  </a>
+</section>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,133 @@
+.modal {
+    display:none;
+    position: absolute;
+    z-index: 15;
+    left:0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    font-size: 1.8rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-body > p {
+    margin-bottom: 10px;
+}
+
+.modal-body > ul {
+    margin-bottom: 10px;
+    padding-left: 30px
+}
+
+.modal-content {
+    background-color: #f4f4f4;
+    margin: 0 auto;
+    width: 400px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    animation-name: modalOpen;
+    animation-duration: 3s; 
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    background: var(--gradient-background);
+    padding: 15px;
+    line-height: 20px;
+    /* color:rgba(5, 117, 230, 1); */
+    color: #000;
+}
+
+.modal-body {
+    padding: 10px 20px;
+}
+
+.warning {
+    color: red;
+    font-style: italic;
+}
+
+.modal-footer {
+    background-image: var(--gradient-background);
+    padding: 10px;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+}
+
+.modal-header h2, .modal-footer h3 {
+    margin: 0;
+}
+
+.closeBtn {
+    float: right;
+    font-size: 30px;
+    /* margin-top: -5px; */
+}
+
+.closeBtn:hover, .closeBtn:focus {
+    color: #52cc00;
+    text-shadow: 0 0 5px #52cc00; 
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mdlBtn {
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    font-size: 1.8rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.mdlBtn:hover {
+    /* border-color: #52cc00;
+    color: #52cc00;
+    box-shadow: 2px 2px 4px #52cc00, inset 2px 2px 4px #52cc00;
+    text-shadow: 0 0 5px #52cc00; */
+    background-color: rgba(0, 0, 0, .3);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, .5);
+}
+
+.mdl:focus {
+    outline: none;
+}
+
+ul.no-bullets {
+    list-style: none;
+    padding-left: 10px;
+}
+
+ul.no-bullets li {
+    margin-bottom: 5px;
+}
+
+ul.no-bullets li i {
+    margin-right: 10px
+}
+
+@keyframes modalOpen {
+    from{ opacity: 0 };
+    to{ opacity: 0 };
+}
+
+@media (max-width: 410px) {
+    .modal-content {
+        background-color: #f4f4f4;
+        margin: 5% auto 5% ;
+        width: 300px;
+        box-sizing: content-box;
+        font-size: 1.2rem;
+    }
+
+    .modal-body {
+        height:100%;
+    }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <title>Credit Card Check</title>
+  <script src="https://kit.fontawesome.com/2b9471e61e.js"></script>
+  <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='modal.css')}}">
+</head>
+
+<body>
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div>
+  <!-- MODAL -->
+  <div id="simpleModal" class="modal" data-view="{{ result[1] }}">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>CardChecker.pl</h2>
+        <span class="closeBtn">&times;</span>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button id="langBtn" value="0" class="mdlBtn">Polski</button>
+      </div>
+
+    </div>
+  </div>
+  <!-- PRELOADER -->
+  <div class="preloader"></div>
+  <script src="https://code.jquery.com/jquery-1.12.3.min.js"
+    integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,477 @@
+/* general styling for the layout component */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes bounceIn {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    --basic-background: #eeeeee;
+    --gradient-background: linear-gradient(90deg, rgb(0, 242, 96), rgba(5, 117, 230, .5));
+
+    --text-dark: #555555;
+    --text-light: #aaaaaa;
+
+    --shadow-light: -5px -5px 5px #fff;
+    --shadow-dark: 2px 2px 15px rgba(0, 0, 0, .25);
+}
+
+body {
+    background-image: var(--gradient-background);
+    margin: 0;
+    font-size: 2.4rem;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden; 
+}
+
+.container {
+    height: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+}
+
+/* styling for the info buttons section ( right or bottom )*/
+
+section.info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5% 0 5% 5%
+}
+
+.info-btn {
+    display: block;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    line-height: 92px;
+    text-align: center;
+    border: 5px solid var(--text-dark);
+    z-index: 12;
+    color: var(--text-dark);
+    font-size: 4rem;
+
+    cursor: pointer
+}
+
+.info-btn:hover {
+    color: rgb(0, 242, 96);
+    border-color: rgb(0, 242, 96);
+    box-shadow: 0 0 5px rgb(0, 242, 96), inset 0 0 5px rgb(0, 242, 96);
+    text-shadow: 0 0 5px rgb(0, 242, 96);
+}
+
+/* display section */
+
+section.panel-section {
+    width: 55%;
+    height: 100%;
+}
+
+div.panel {
+    background-color: var(--basic-background);
+    box-shadow: 8px 8px 12px rgba(0,0,0,.3);
+
+    width: 450px;
+    height: 90%;
+    border-radius: 60px;
+    margin: 5% 0 5% auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 2.6rem;
+    color: var(--text-dark);
+    margin-top: 30px
+}
+
+.card-container {
+    position: relative;
+    padding: 0 50px
+}
+
+.card {
+    position: relative;
+    margin: 0 auto;
+    box-shadow: -5px -5px 12px #fff, 5px 5px 12px rgba(0,0,0,.3);
+    max-width: 440px;
+    height: 180px;
+    border-radius: 20px;
+    font-size: 2rem;
+}
+
+.output {
+    height: 100%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-dark {
+    position:absolute;
+    right: 0;
+    top: 0;
+
+    width: 15px;
+    height: 100%;
+    border-radius: 15px 0 0 15px;
+    background-image: linear-gradient(180deg, var(--text-light), var(--text-dark))
+}
+
+h2 {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: inherit;
+    font-weight: 400;
+    /* margin-bottom: 35px; */
+}
+
+#ico { /* the icon inside the card */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    line-height: 44px;
+    
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: inherit;
+
+    color: #ccc;
+    box-shadow: -5px -5px 5px #fff, 3px 3px 9px rgba(0, 0, 0, .5), inset -2px -2px 5px #fff, inset 2px 2px 5px rgba(0,0,0,.5);
+    border: 3px solid #ccc;
+
+    transform: all 1s;
+}
+
+#ico.red {
+    background-color: red;
+}
+
+#ico.green {
+    background-color: #52cc00;
+}
+
+#chip {
+    font-size: 3rem;
+    display: inline;
+    color: var(--text-dark);
+
+    display: flex;
+    align-items: center;
+}
+
+#chip i.fas {
+    transform: rotate(90deg);
+}
+
+#card-no {
+    display: inline-block;
+    font-size: 1.6rem;
+    margin-left: 30px;
+    right: 0;
+}
+
+#card-holder {
+    font-size: inherit;
+}
+
+
+
+/* INPUT styling for the form at the buttom */
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+    margin-bottom: 20px
+}
+
+input {
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 10px;
+    height: 60px;
+    width: 70%;
+    font-size: 1.5rem;
+    font-weight: 500;
+
+    margin-bottom: 50px;
+}
+
+input:focus {
+    outline:none;
+}
+
+.number {
+    color: #bbb;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 3px solid #ccc;
+    background-color: transparent;
+    padding: 0 20px
+}
+
+.number:focus {
+    color: #f00;
+    border-color: #f00;
+    box-shadow: 0 0 5px #f00, inset 0 0 5px #f00;
+    text-shadow: 0 0 3px #f00;
+}
+
+.number:focus::placeholder {
+    color: #f00;
+    opacity: .5
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+
+    width: 70%;
+}
+
+.btn {
+    background-color: transparent;
+    border: 2px solid #ccc;
+    color: #aaa;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+
+    text-decoration: none;
+    text-align: center;
+    line-height: 56px;
+    font-size: 1.4rem;
+
+    min-width: 44%;
+    height: 60px;
+
+    box-shadow: 3px 3px 5px rgba(0,0,0,.3), -5px -5px 5px #fff;
+}
+
+.btn:hover{
+    cursor: pointer;
+    color: #f00;
+    border-color: #f00;
+    box-shadow: 3px 3px 5px rgba(0,0,0,.3), -5px -5px 5px #fff, inset 0 0 5px #f00;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #bbb;
+        opacity: 1; /* Firefox */
+    }
+    
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: #bbb;
+    }
+    
+  ::-ms-input-placeholder { /* Microsoft Edge */
+        color: #bbb;
+    }
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1200px) {
+    section.panel-section {
+        width: 65%
+    }
+} 
+
+@media (max-width: 960px) {
+    section.panel-section {
+        width: 70%;
+        /* height: 100%; */
+    }
+} 
+
+@media (min-width: 800px) and (orientation: portrait) {
+    div.panel {
+        height: 80%;
+        margin: 0 0 0 auto;
+    }
+
+    section.panel-section {
+        padding-top: 20%;
+    }
+
+    section.info-section {
+        padding: 20% 5%;
+    }
+}
+
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+    }
+    section.panel-section {
+        width: 100%;
+        height: 90%;
+    }
+
+    section.info-section {
+        height: 10%;
+        min-height: 120px;
+        border-top: 5px solid rgb(0,0,0);
+        background-color: rgba(0,0,0,.2);
+        flex-direction: row;
+        padding: 10px
+    }
+
+    .info-btn {
+        color: #000;
+        border-color: #000;
+    }
+
+    div.panel {
+        margin: 5% auto
+    }
+} 
+
+@media (max-width: 600px) {
+    div.panel {
+        width: 400px
+    }
+}
+
+@media (max-width: 436px) {
+    /* TODO zmienić zupełnie proporcje panelu - wysokość karty i formularza + paddingi w  buttonach */
+    div.panel {
+        width: 280px
+    }
+
+    .card-container {
+        padding: 0 25px;
+    }
+
+    .card {
+        font-size: 1.4rem;
+        height: 130px;
+    }
+
+    .output {
+        padding: 15px 25px
+    }
+
+    .card-dark {
+        width: 10px;
+        border-radius: 10px 0 0 10px;
+    }
+
+    form {
+        height: auto;
+        margin-bottom:0
+    }
+
+    p.btns {
+        flex-direction: column;
+    }
+
+    .btn {
+        margin-bottom: 15px;
+        height: 40px;
+        line-height: 36px;
+    }
+
+    /* ikonka sprawdzenia */
+
+    #ico { /* the icon inside the card */
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    
+        line-height: 34px;
+        
+        width: 40px;
+        height: 40px;
+        font-size: inherit;
+    }
+}
+
+@media (max-width: 360px) {
+    div.panel {
+        width: 250px
+    }
+
+    input.number {
+        margin-bottom: 20px;
+        height: 50px
+    }
+
+    section.info-section {
+        height: 80px;
+        min-height: 80px;
+        padding: 10px;
+        border-top-width: 3px;
+    }
+
+    .info-btn {
+        height: 60px;
+        width: 60px;
+        line-height: 52px;
+        border-width: 3px;
+        font-size: 3rem
+    }
+
+    #card-no {
+        font-size: 1.3rem
+    }
+}
+/* 
+section.info-section {
+    height: 10%;
+    min-height: 120px;
+    border-top: 5px solid rgba(5, 117, 230, 1);
+    background-color: rgba(5, 117, 230, .2);
+    flex-direction: row;
+    padding: 10px
+} */
