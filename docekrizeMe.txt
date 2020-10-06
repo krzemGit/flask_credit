@@ -1,0 +1,6 @@
+// Build Image
+
+docker image build -t krzemmo/flask_credit .
+
+// Run container (port 5001)
+docker container run -p 5001:5000 --name flask_credit krzemmo/flask_credit

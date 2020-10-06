@@ -1,15 +1,24 @@
+/* Styling for modal */
+
+/* general styling */
+
 .modal {
-    display:none;
+    display: none;
+
     position: absolute;
     z-index: 15;
     left:0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.6);
 
+    overflow: auto;
+    transition: opacity 1s;
+
+    background-color: rgba(0, 0, 0, 0.6);
     font-size: 1.8rem;
+    opacity: 1;
+
     justify-content: center;
     align-items: center;
 }
@@ -28,8 +37,10 @@
     margin: 0 auto;
     width: 400px;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
-    animation-name: modalOpen;
-    animation-duration: 3s; 
+    /* animation-name: modalOpen;
+    animation-duration: 3s;  */
+    transition: all 1s;
+    opacity: 0
 }
 
 .modal-header {
@@ -38,7 +49,6 @@
     background: var(--gradient-background);
     padding: 15px;
     line-height: 20px;
-    /* color:rgba(5, 117, 230, 1); */
     color: #000;
 }
 
@@ -66,7 +76,6 @@
 .closeBtn {
     float: right;
     font-size: 30px;
-    /* margin-top: -5px; */
 }
 
 .closeBtn:hover, .closeBtn:focus {
@@ -88,10 +97,6 @@
 }
 
 .mdlBtn:hover {
-    /* border-color: #52cc00;
-    color: #52cc00;
-    box-shadow: 2px 2px 4px #52cc00, inset 2px 2px 4px #52cc00;
-    text-shadow: 0 0 5px #52cc00; */
     background-color: rgba(0, 0, 0, .3);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, .5);
 }
@@ -113,10 +118,24 @@ ul.no-bullets li i {
     margin-right: 10px
 }
 
+/* utility class */
+
+.visible {
+    opacity: 1
+}
+
+.invisible {
+    opacity: 0
+}
+
+/* keyframes */
+
 @keyframes modalOpen {
     from{ opacity: 0 };
     to{ opacity: 0 };
 }
+
+/* media queries */
 
 @media (max-width: 410px) {
     .modal-content {

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, jsonify
+from flask import Flask, render_template, request, url_for, jsonify, send_from_directory
 from card_check import check_sum, check_card
 
 app = Flask(__name__)
@@ -39,4 +39,4 @@ def about(lang):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0")
